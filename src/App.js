@@ -1,11 +1,15 @@
 import React from 'react';
 import "normalize-css";
 import "./App.scss";
+import Homepage from "./pages/Homepage/Homepage";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className='App'>
-      <h1>Welcome to Public Holidays</h1>
+      <Routes>
+        <Route path="/" element={<Homepage/>}/>
+      </Routes>
     </div>
   );
 }
