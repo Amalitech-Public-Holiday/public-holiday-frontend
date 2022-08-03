@@ -1,7 +1,0 @@
-%fluid-typography {
-    font-size: 0.875rem;
-    font-size: clamp(0.875rem, 0.7678571428571428rem + 0.5357142857142857vw, 1.25rem);
-        @supports not (font-size: clamp(0.875rem, 0.7678571428571428rem + 0.5357142857142857vw, 1.25rem)) {
-                    font-size: min(max(0.875rem, 0.7678571428571428rem + 0.5357142857142857vw), 1.25rem);
-                }
-}
