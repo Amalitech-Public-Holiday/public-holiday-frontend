@@ -1,0 +1,160 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Open+Sans:wght@300;500&family=Playfair+Display:wght@500&display=swap');
+@import "./helpers/variables";
+@import "./helpers/placeholders";
+@import "./helpers/mixins";
+@import "./helpers/media-queries";
+
+// Universal styles
+*, 
+*::before,
+*::after  {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    @extend %fluid-typography;
+    width: 100vw;
+    min-height: 97.52vh;
+}
+
+body {
+    font: {
+        family: $family-primary;
+        size: inherit;
+        weight: 300;
+    }
+    padding: 0 $space-6;
+    line-height: $body-line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: $space-2;
+    margin-bottom: $size-7;
+    font-family: $family-secondary;
+    font-weight: 500;
+    line-height: $heading-line-height;
+}
+
+.text-display {
+    font: {
+        size: calc($size-1 * 1.4);
+        family: $family-tertiary;
+        weight: 900;
+    }
+}
+
+h1,
+.text-xxxlarge {
+    font-size: $size-1;
+}
+
+h2,
+.text-xxlarge {
+    font-size: $size-2;
+}
+
+h3,
+.text-xlarge {
+    font-size: $size-3;
+}
+
+h4,
+.text-large {
+    font-size: $size-4;
+}
+
+h5,
+.text-medium {
+    font-size: $size-5;
+}
+
+h6,
+.text-small {
+    font-size: $size-6;
+}
+
+p {
+    margin-bottom: $size-6;
+}
+
+small,
+.text-xsmall {
+    font-size: $size-7;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+[class*='column'] {
+    flex-basis: 100%;
+    padding: $size-7;
+}
+
+button, .button {
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 500;
+    background-color: $grey;
+    border: none;
+    border-radius: $size-7;
+    padding: $space-7 $space-3;
+    margin: $space-7 $space-8;
+    display: inline-block;
+    transition-duration: 0.4s;
+
+    &:hover {
+        background-color: transparent;
+        outline: .15rem solid $grey;
+    }
+
+    &:active {
+        background-color: $grey;
+    }
+}
+
+input, select {
+    font-size: $size-7;
+    width: 100%;
+    height: 2.5rem;
+    padding: 0 $space-6 0 $space-7 !important;
+    margin: $space-8 $space-7;
+    border: .15rem solid $grey;
+    border-radius: calc($space-7 / 3);
+    
+    &:focus {
+        background-color: $grey;
+    }
+}
+
+select {
+    padding-right: $space-6;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    -ms-appearance: none !important;
+    -o-appearance: none !important;
+    background: url("../img/dropdown-arrow-16-16.png") no-repeat;
+    background-position: calc(100% - 0.75rem) center !important;
+}
+
+label {
+    font-weight: 500;
+    padding-left: $space-7;
+}
