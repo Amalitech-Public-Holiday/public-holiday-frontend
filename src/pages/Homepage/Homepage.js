@@ -8,7 +8,7 @@ const Homepage = () => {
         <p>Discover holidays in countries with a month and/or day in a year.</p>
         <div className="buttons">
           <div className="row">
-            <Link to="#" className="button blue column">Signup</Link>
+            <Link to="/signup" className="button blue column">Signup</Link>
             <Link to="#" className="button column">Login</Link>
           </div>
         </div>
