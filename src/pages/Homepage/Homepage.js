@@ -9,7 +9,7 @@ const Homepage = () => {
         <div className="buttons">
           <div className="row">
             <Link to="/signup" className="button blue column">Signup</Link>
-            <Link to="#" className="button column">Login</Link>
+            <Link to="/login" className="button column">Login</Link>
           </div>
         </div>
       </div>
