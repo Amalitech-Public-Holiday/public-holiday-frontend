@@ -1,6 +1,20 @@
 @import "../../sass/index.scss";
 
 .NavBar {
-    background-color: $blue;
-    padding: $space-7;
+    padding: $space-6 $space-1;
+    nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 $space-1;
+        a {
+            font-weight: 500;
+            text-decoration: none;
+            &:link, &:visited {
+                color: $blue;
+            }
+        }
+    }
+    position: absolute;
+    top: 0;
+    width: 100%;
 }
