@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = (props) => {
     return(
         <div className="NavBar">
             <nav>
                 <NavLink to="/">Homepage</NavLink>
-                <NavLink to="/login">Login</NavLink>
+                {props.children}
             </nav>
         </div>
     );
