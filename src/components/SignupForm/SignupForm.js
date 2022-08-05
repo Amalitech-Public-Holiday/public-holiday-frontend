@@ -1,6 +1,6 @@
 const SignupForm = () => {
     return (
-      <div>
+      <form>
         <div>
           <label htmlFor="fullname">Full name:</label>
           <input type="text" name="fullname" />
@@ -20,7 +20,7 @@ const SignupForm = () => {
         <div>
             <input type="submit"/>
         </div>
-      </div>
+      </form>
     );
 }
 
