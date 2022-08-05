@@ -1,8 +1,8 @@
 @import "../../sass/index.scss";
 
 .Signup {
-    min-height: 97.52vh;
-    overflow: auto;
+    @extend %container;
+    padding-top: $space-2;
     h2 {
         text-align: center;
     }
