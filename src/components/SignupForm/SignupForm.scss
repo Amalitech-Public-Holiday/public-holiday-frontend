@@ -9,5 +9,9 @@
 	form {
 		width: 35%;
 		padding: $space-6;
+		.green {
+			@include button-style($white, $green);
+		}
 	}
+
 }
