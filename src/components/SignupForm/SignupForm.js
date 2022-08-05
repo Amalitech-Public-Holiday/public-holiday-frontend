@@ -1,8 +1,9 @@
 import "./SignupForm.scss";
 
 const SignupForm = () => {
-    return (
-      <form className="SignupForm">
+  return (
+    <div className="SignupForm">
+      <form>
         <div>
           <label htmlFor="fullname">Full name:</label>
           <input type="text" name="fullname" />
@@ -20,10 +21,11 @@ const SignupForm = () => {
           <input type="password" name="password2" />
         </div>
         <div>
-            <input type="submit" className="button"/>
+          <input type="submit" className="button green" />
         </div>
       </form>
-    );
-}
+    </div>
+  );
+};
 
 export default SignupForm;
