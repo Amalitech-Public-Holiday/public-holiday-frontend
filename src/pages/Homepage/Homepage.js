@@ -1,4 +1,5 @@
 import "./Homepage.scss";
+import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 
 const Homepage = () => {
@@ -12,6 +13,7 @@ const Homepage = () => {
             <Link to="/login" className="button column">Login</Link>
           </div>
         </div>
+        <Footer/>
       </div>
     );
 }
