@@ -1,6 +1,13 @@
 @import "../../sass/index.scss";
 
-.SignupForm  {
-    margin-top: $space-1;
-    width: 30%;
+.SignupForm {
+	margin-top: $space-1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	form {
+		width: 35%;
+		padding: $space-6;
+	}
 }
