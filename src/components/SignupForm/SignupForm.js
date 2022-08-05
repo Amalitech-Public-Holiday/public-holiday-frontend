@@ -17,6 +17,9 @@ const SignupForm = () => {
           <label htmlFor="password2">Retype password:</label>
           <input type="password" name="password2" />
         </div>
+        <div>
+            <input type="submit"/>
+        </div>
       </div>
     );
 }
