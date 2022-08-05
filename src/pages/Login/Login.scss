@@ -1,15 +1,18 @@
 @import "../../sass/index.scss";
 
 .Login {
-    min-height: 97.52vh;
-    overflow: auto;
-    nav  {
-        .button {
-            color: $black;
-            margin: 0;
-        }
+  @extend %container;
+  padding-top: $space-2;
+
+  // overflow: auto;
+  nav {
+    .button {
+      color: $black;
+      margin: 0;
     }
-    h2 {
-        text-align: center;
-    }
+  }
+
+  h2 {
+    text-align: center;
+  }
 }
