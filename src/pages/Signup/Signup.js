@@ -9,7 +9,7 @@ const Signup = () => {
             <NavBar>
                 <Link to="/login">Login</Link>
             </NavBar>
-            <h2>Signup Page</h2>
+            <h2>Create an account</h2>
             <Footer/>
         </div>
     );
