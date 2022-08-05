@@ -1,6 +1,8 @@
+import "./SignupForm.scss";
+
 const SignupForm = () => {
     return (
-      <form>
+      <form className="SignupForm">
         <div>
           <label htmlFor="fullname">Full name:</label>
           <input type="text" name="fullname" />
