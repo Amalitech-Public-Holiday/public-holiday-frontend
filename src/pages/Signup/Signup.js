@@ -1,5 +1,6 @@
 import "./Signup.scss";
 import NavBar from "../../components/NavBar/NavBar";
+import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 
 const Signup = () => {
@@ -9,6 +10,7 @@ const Signup = () => {
                 <Link to="/login">Login</Link>
             </NavBar>
             <h2>Signup Page</h2>
+            <Footer/>
         </div>
     );
 }
