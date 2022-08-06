@@ -15,3 +15,14 @@
 	}
 
 }
+
+@media screen and (max-width: 800px) {
+	.SignupForm {
+		margin-top: $space-5;
+
+		form {
+			width: 90%;
+		}
+	}
+
+}
