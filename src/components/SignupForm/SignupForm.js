@@ -1,6 +1,13 @@
 import "./SignupForm.scss";
+import {useState} from "react";
+
 
 const SignupForm = () => {
+  const [fullname, setFullname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password1, setPassword1] = useState("");
+  const [password2, setPassword2] = useState("");
+
   return (
     <div className="SignupForm">
       <form autoComplete="true">
