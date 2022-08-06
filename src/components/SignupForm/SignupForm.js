@@ -8,12 +8,16 @@ const SignupForm = () => {
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
 
+  const handleFullname = ({target}) => {
+    setFullname(target.value);
+  }
+
   return (
     <div className="SignupForm">
       <form autoComplete="true">
         <div>
           <label htmlFor="fullname">Full name:</label>
-          <input type="text" name="fullname" autoFocus={true} value={fullname}/>
+          <input type="text" name="fullname" autoFocus={true} value={fullname} onChange={handleFullname}/>
         </div>
         <div>
           <label htmlFor="email">Email:</label>
