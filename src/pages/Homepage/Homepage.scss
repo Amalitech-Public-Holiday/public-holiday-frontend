@@ -1,27 +1,28 @@
-@import "../../sass/helpers/mixins";
-@import "../../sass/helpers/variables";
-@import "../../sass/helpers/layout";
+@import "../../sass/index.scss";
 
 .Homepage {
-    margin-top: calc($size-1 * 1.5);
-    overflow: auto;
+  margin-top: calc($size-1 * 1.5);
+  overflow: auto;
 
-    h1, p {
-        text-align: center;
-        padding: 0 $space-3;
-    }
+  h1,
+  p {
+    text-align: center;
+    padding: 0 $space-3;
+  }
 
-    .buttons {
-        display: flex;
-        justify-content: center;
-    }
+  .buttons {
+    display: flex;
+    justify-content: center;
+  }
 
-    .blue {
-        @include button-style($white, $blue);
-    }
+  .blue {
+    @include button-style($white, $blue);
+  }
 
-    a.button {
-        margin-left: $space-7;
-        margin-right: $space-7;
+  a.button {
+    margin: {
+      left: $space-7;
+      right: $space-7;
     }
+  }
 }
