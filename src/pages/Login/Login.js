@@ -10,7 +10,7 @@ const Login = () => {
             <NavBar>
                 <Link to="/signup">Signup</Link>
             </NavBar>
-            <h2>Login to access</h2>
+            <h2 className="text-xlarge">Login to access</h2>
             <LoginForm/>
             <Footer/>
         </div>
