@@ -13,3 +13,10 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  .LoginForm {
+    margin-top: $space-6;
+    width: 100%;
+  }
+}
