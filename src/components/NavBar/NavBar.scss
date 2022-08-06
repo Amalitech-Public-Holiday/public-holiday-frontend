@@ -2,6 +2,9 @@
 
 .NavBar {
   padding: $space-1;
+  position: fixed;
+  top: 0;
+  width: 100%;
 
   nav {
     display: flex;
@@ -25,7 +28,11 @@
     }
   }
 
-  position: fixed;
-  top: 0;
-  width: 100%;
+  @media screen and (max-width: 800px) {
+    padding: $space-5 $space-4;
+
+    nav {
+      padding: 0;
+    }
+  }
 }
