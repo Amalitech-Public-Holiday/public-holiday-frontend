@@ -19,6 +19,10 @@ const SignupForm = () => {
   const handlePassword1 = ({target}) => {
     setPassword1(target.value);
   }
+
+  const handlePassword2 = ({target}) => {
+    setPassword2(target.value);
+  }
   return (
     <div className="SignupForm">
       <form autoComplete="true">
@@ -36,7 +40,7 @@ const SignupForm = () => {
         </div>
         <div>
           <label htmlFor="password2">Retype password:</label>
-          <input type="password" name="password2" autoComplete="true" value={password2}/>
+          <input type="password" name="password2" autoComplete="true" value={password2} onChange={handlePassword2}/>
         </div>
         <div>
           <input type="submit" className="button green" />
