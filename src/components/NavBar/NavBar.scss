@@ -16,11 +16,11 @@
 
       &:link,
       &:visited {
-        color: $blue;
+        color: $black;
       }
 
       &:hover {
-        border-bottom: 0.2rem solid $blue;
+        border-bottom: 0.2rem solid $grey;
       }
     }
   }
