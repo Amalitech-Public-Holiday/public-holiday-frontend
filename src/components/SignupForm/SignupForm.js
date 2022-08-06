@@ -13,19 +13,19 @@ const SignupForm = () => {
       <form autoComplete="true">
         <div>
           <label htmlFor="fullname">Full name:</label>
-          <input type="text" name="fullname" autoFocus={true}/>
+          <input type="text" name="fullname" autoFocus={true} value={fullname}/>
         </div>
         <div>
           <label htmlFor="email">Email:</label>
-          <input type="email" name="email" />
+          <input type="email" name="email" value={email}/>
         </div>
         <div>
           <label htmlFor="password1">Password:</label>
-          <input type="password" name="password1" autoComplete="true"/>
+          <input type="password" name="password1" autoComplete="true" value={password1}/>
         </div>
         <div>
           <label htmlFor="password2">Retype password:</label>
-          <input type="password" name="password2" autoComplete="true"/>
+          <input type="password" name="password2" autoComplete="true" value={password2}/>
         </div>
         <div>
           <input type="submit" className="button green" />
