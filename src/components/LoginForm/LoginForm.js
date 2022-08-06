@@ -1,3 +1,5 @@
+import "./LoginForm.scss";
+
 const LoginForm = () => {
   return (
     <div className="LoginForm">
