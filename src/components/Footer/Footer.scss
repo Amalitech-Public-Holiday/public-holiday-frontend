@@ -1,11 +1,9 @@
 @import "../../sass/index.scss";
 
 .Footer {
-    position: absolute;
-    width: 100%;
-    bottom: $space-2;
-    
     p {
         text-align: center;
+        padding: $space-1;
+        padding-top: $space-3;
     }
 }
