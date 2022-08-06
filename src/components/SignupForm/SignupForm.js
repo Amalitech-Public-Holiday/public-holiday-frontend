@@ -12,6 +12,10 @@ const SignupForm = () => {
     setFullname(target.value);
   }
 
+  const handleEmail = ({target}) => {
+    setEmail(target.value);
+  }
+
   return (
     <div className="SignupForm">
       <form autoComplete="true">
@@ -21,7 +25,7 @@ const SignupForm = () => {
         </div>
         <div>
           <label htmlFor="email">Email:</label>
-          <input type="email" name="email" value={email}/>
+          <input type="email" name="email" value={email} onChange={handleEmail}/>
         </div>
         <div>
           <label htmlFor="password1">Password:</label>
