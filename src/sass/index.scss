@@ -110,7 +110,7 @@ button, .button {
     min-width: calc($space-1 * 3);
     height: $space-1;
     padding: $space-7;
-    margin: $space-7 $space-8;
+    margin: $space-7 0;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -131,10 +131,9 @@ input, select {
     width: 100%;
     height: 2.5rem;
     padding: 0 $space-6 0 $space-7 !important;
-    margin: $space-8 $space-7;
+    margin: $space-8 0;
     border: .15rem solid $grey;
     border-radius: calc($space-7 / 3);
-    
     &:focus {
         background-color: $grey;
     }
