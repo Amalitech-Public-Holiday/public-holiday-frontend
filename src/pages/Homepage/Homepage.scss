@@ -19,4 +19,9 @@
     .blue {
         @include button-style($white, $blue);
     }
+
+    a.button {
+        margin-left: $space-7;
+        margin-right: $space-7;
+    }
 }
