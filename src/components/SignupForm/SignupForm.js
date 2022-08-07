@@ -7,24 +7,35 @@ const SignupForm = () => {
   const [email, setEmail] = useState("");
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
-  const [isValid, setisInvaid] = useState(false);
+  const [isValid, setIsInvaid] = useState(false);
   const [invalidMsg, setInvalidMsg] = useState({});
+
+  useEffect(() => {
+    if (password1) {
+      if (password1.length < 12) {
+        setInvalidMsg({error1: "Password must be a mininum of 12 characters long."});
+        setIsInvaid(true);
+      } else {
+        setIsInvaid(false);
+      }
+    }
+  }, [password1]);
   
-  const handleFullname = ({target}) => {
+  const handleFullname = ({ target }) => {
     setFullname(target.value);
-  }
+  };
 
-  const handleEmail = ({target}) => {
+  const handleEmail = ({ target }) => {
     setEmail(target.value);
-  }
+  };
 
-  const handlePassword1 = ({target}) => {
+  const handlePassword1 = ({ target }) => {
     setPassword1(target.value);
-  }
+  };
 
-  const handlePassword2 = ({target}) => {
+  const handlePassword2 = ({ target }) => {
     setPassword2(target.value);
-  }
+  };
 
   return (
     <div className="SignupForm">
