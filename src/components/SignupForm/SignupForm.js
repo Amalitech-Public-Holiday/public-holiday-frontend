@@ -1,5 +1,5 @@
 import "./SignupForm.scss";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 
 const SignupForm = () => {
@@ -8,7 +8,7 @@ const SignupForm = () => {
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
   const [isValid, setisInvaid] = useState(false);
-  const [invalidMsg, setInvalidMsg] = useState("");
+  const [invalidMsg, setInvalidMsg] = useState({});
   
   const handleFullname = ({target}) => {
     setFullname(target.value);
@@ -58,10 +58,9 @@ const SignupForm = () => {
             value={password1}
             autoComplete="true"
             onChange={handlePassword1}
-            minLength="12"
             required
           />
-          <span>{isValid && invalidMsg}</span>
+          <span>{isValid && invalidMsg.error1}</span>
         </div>
         <div>
           <label htmlFor="password2">Retype password:</label>
@@ -71,10 +70,9 @@ const SignupForm = () => {
             value={password2}
             autoComplete="true"
             onChange={handlePassword2}
-            minLength="12"
             required
           />
-          <span>{isValid && invalidMsg}</span>
+          <span>{isValid && invalidMsg.error2}</span>
         </div>
         <div>
           <input type="submit" className="button green" />
