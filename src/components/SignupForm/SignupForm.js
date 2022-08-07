@@ -1,7 +1,6 @@
 import "./SignupForm.scss";
 import {useEffect, useState} from "react";
 
-
 const SignupForm = () => {
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
@@ -12,27 +11,24 @@ const SignupForm = () => {
 
   useEffect(() => {
     if (password1) {
-      if (password1.length < 12) {
-        setInvalidMsg({error1: "Password must be a mininum of 12 characters long."});
-        setIsInvaid(true);
-      } else {
-        setIsInvaid(false);
-      }
+      checkPassLength(password1, {error1: "Password must be a mininum of 12 characters long."});
     }
   }, [password1]);
 
   useEffect(() => {
     if (password2) {
-      if (password2.length < 12) {
-        setInvalidMsg({
-          error2: "Password must be a mininum of 12 characters long.",
-        });
+      checkPassLength(password2, {error2: "Password must be a mininum of 12 characters long."});
+    }
+  }, [password2]);
+
+  const checkPassLength = (password, message) => {
+    if (password.length < 12) {
+        setInvalidMsg(message);
         setIsInvaid(true);
       } else {
         setIsInvaid(false);
       }
-    }
-  }, [password2]);
+  };
 
   const handleFullname = ({ target }) => {
     setFullname(target.value);
