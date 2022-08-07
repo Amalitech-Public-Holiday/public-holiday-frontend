@@ -8,6 +8,7 @@ const SignupForm = () => {
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
   const [isValid, setisInvaid] = useState(false);
+  const [invalidMsg, setInvalidMsg] = useState("");
   
   const handleFullname = ({target}) => {
     setFullname(target.value);
