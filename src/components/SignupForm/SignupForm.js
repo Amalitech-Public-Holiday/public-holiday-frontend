@@ -20,7 +20,20 @@ const SignupForm = () => {
       }
     }
   }, [password1]);
-  
+
+  useEffect(() => {
+    if (password2) {
+      if (password2.length < 12) {
+        setInvalidMsg({
+          error2: "Password must be a mininum of 12 characters long.",
+        });
+        setIsInvaid(true);
+      } else {
+        setIsInvaid(false);
+      }
+    }
+  }, [password2]);
+
   const handleFullname = ({ target }) => {
     setFullname(target.value);
   };
