@@ -39,7 +39,6 @@ const SignupForm = () => {
             onChange={handleFullname}
             required
           />
-          <span>{}</span>
         </div>
         <div>
           <label htmlFor="email">Email:</label>
@@ -62,6 +61,7 @@ const SignupForm = () => {
             minLength="12"
             required
           />
+          <span>{isValid && invalidMsg}</span>
         </div>
         <div>
           <label htmlFor="password2">Retype password:</label>
@@ -74,6 +74,7 @@ const SignupForm = () => {
             minLength="12"
             required
           />
+          <span>{isValid && invalidMsg}</span>
         </div>
         <div>
           <input type="submit" className="button green" />
