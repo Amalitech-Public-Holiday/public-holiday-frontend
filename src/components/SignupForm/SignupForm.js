@@ -6,7 +6,7 @@ const SignupForm = () => {
   const [email, setEmail] = useState("");
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
-  const [isValid, setIsInvaid] = useState(false);
+  const [isValid, setIsInvalid] = useState(false);
   const [invalidMsg, setInvalidMsg] = useState({});
   const [isSubmit, setIsSubmit] = useState(true);
 
@@ -25,9 +25,9 @@ const SignupForm = () => {
   const checkPassLength = (password, message) => {
     if (password.length < 12) {
         setInvalidMsg(message);
-        setIsInvaid(true);
+        setIsInvalid(true);
       } else {
-        setIsInvaid(false);
+        setIsInvalid(false);
       }
   };
 
@@ -61,6 +61,9 @@ const SignupForm = () => {
           setPassword2("");
           setIsSubmit(true);
         }, 2000);
+      } else {
+        setInvalidMsg({error3: "Password must be the same!"});
+        setIsInvalid(true);
       }
     }
   }
@@ -114,6 +117,7 @@ const SignupForm = () => {
           <span>{isValid && invalidMsg.error2}</span>
         </div>
         <div>
+          <span>{isValid && invalidMsg.error3}</span>
           <button type="submit" className="green">
             {isSubmit ? "Submit" : "Submitting..."}
           </button>
