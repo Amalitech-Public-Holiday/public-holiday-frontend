@@ -2,7 +2,6 @@
 
 .SignupForm {
   padding: 0 $space-6;
-	margin-top: $space-4;
 	width: 35%;
 
 	form {
@@ -10,13 +9,14 @@
 		.green {
 			@include button-style($white, $green);
 		}
+		button {
+		width: 100%;
+		}
 	}
-
 }
 
 @media screen and (max-width: 800px) {
 	.SignupForm {
-		margin-top: $space-6;
 		width: 100%;
 	}
 
