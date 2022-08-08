@@ -7,7 +7,7 @@ const SignupForm = () => {
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
   const [isValid, setIsInvalid] = useState(false);
-  const [invalidMsg, setInvalidMsg] = useState({});
+  const [notifications, setNotifications] = useState({});
   const [isSubmit, setIsSubmit] = useState(true);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const SignupForm = () => {
 
   const checkPassLength = (password, message) => {
     if (password.length < 12) {
-        setInvalidMsg(message);
+        setNotifications(message);
         setIsInvalid(true);
       } else {
         setIsInvalid(false);
@@ -58,7 +58,7 @@ const SignupForm = () => {
       if (password1  === password2) {
         setIsSubmit(false);
         setTimeout(() => {
-          alert("Account creation successful");
+          setNotifications({ success: "Account creation successful" });
           setFullname("");
           setEmail("");
           setPassword1("");
@@ -66,7 +66,7 @@ const SignupForm = () => {
           setIsSubmit(true);
         }, 2000);
       } else {
-        setInvalidMsg({error3: "Password must be the same!"});
+        setNotifications({error3: "Password must be the same!"});
         setIsInvalid(true);
       }
     }
@@ -106,7 +106,7 @@ const SignupForm = () => {
             onChange={handlePassword1}
             required
           />
-          <span>{isValid && invalidMsg.error1}</span>
+          <span>{isValid && notifications.error1}</span>
         </div>
         <div>
           <label htmlFor="password2">Retype password:</label>
@@ -118,10 +118,10 @@ const SignupForm = () => {
             onChange={handlePassword2}
             required
           />
-          <span>{isValid && invalidMsg.error2}</span>
+          <span>{isValid && notifications.error2}</span>
         </div>
         <div>
-          <span>{isValid && invalidMsg.error3}</span>
+          <span>{isValid && notifications.error3}</span>
           <button type="submit" className="green">
             {isSubmit ? "Submit" : "Submitting..."}
           </button>
