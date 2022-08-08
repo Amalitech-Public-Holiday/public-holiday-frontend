@@ -99,7 +99,7 @@ const SignupForm = () => {
           <span>{isValid && invalidMsg.error2}</span>
         </div>
         <div>
-          <input type="submit" className="button green" />
+          <button type="submit" className="green">Submit</button>
         </div>
       </form>
     </div>
