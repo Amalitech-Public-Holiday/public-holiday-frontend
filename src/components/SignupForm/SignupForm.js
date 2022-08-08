@@ -48,6 +48,18 @@ const SignupForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (fullname && email && password1 && password2 !== "") {
+      if (password1  === password2) {
+        setTimeout(() => {
+          alert("Account creation successful");
+          setFullname("");
+          setEmail("");
+          setPassword1("");
+          setPassword2("");
+        }, 2000);
+      }
+    }
   }
 
   return (
