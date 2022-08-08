@@ -46,9 +46,13 @@ const SignupForm = () => {
     setPassword2(target.value);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  }
+
   return (
     <div className="SignupForm">
-      <form autoComplete="true">
+      <form autoComplete="true" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="fullname">Full name:</label>
           <input
