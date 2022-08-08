@@ -7,7 +7,7 @@ const SignupForm = () => {
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
   const [isValid, setIsValid] = useState({});
-  const [isSuccess, setSuccess] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const [notifications, setNotifications] = useState({});
   const [isSubmit, setIsSubmit] = useState(true);
 
@@ -63,7 +63,7 @@ const SignupForm = () => {
           setNotifications(
             {success: "Account creation successful, you can login now!"}
           );
-          setSuccess(true);
+          setIsSuccess(true);
           setFullname("");
           setEmail("");
           setPassword1("");
@@ -80,10 +80,12 @@ const SignupForm = () => {
   return (
     <div className="SignupForm">
       <form autoComplete="true" onSubmit={handleSubmit}>
+        {isSuccess && (
+          <div className="success">{notifications.success}
+            <span onClick={() =>(setIsSuccess(false))}>X</span>
+          </div>
+        )}
         <div>
-          {isSuccess && (
-            <span className="success">{notifications.success}</span>
-          )}
           <label htmlFor="fullname">Full name:</label>
           <input
             type="text"
