@@ -78,7 +78,9 @@ const SignupForm = () => {
     <div className="SignupForm">
       <form autoComplete="true" onSubmit={handleSubmit}>
         <div>
-          {isSuccess && <span className="success">{notifications.success}</span>}
+          {isSuccess && (
+            <span className="success">{notifications.success}</span>
+          )}
           <label htmlFor="fullname">Full name:</label>
           <input
             type="text"
@@ -109,7 +111,7 @@ const SignupForm = () => {
             onChange={handlePassword1}
             required
           />
-          <span>{isValid && notifications.error1}</span>
+          {isValid && <span>{notifications.error1}</span>}
         </div>
         <div>
           <label htmlFor="password2">Retype password:</label>
@@ -121,10 +123,10 @@ const SignupForm = () => {
             onChange={handlePassword2}
             required
           />
-          <span>{isValid && notifications.error2}</span>
+          {isValid && <span>{notifications.error2}</span>}
         </div>
         <div>
-          <span>{isValid && notifications.error3}</span>
+          {isValid && <span>{notifications.error3}</span>}
           <button type="submit" className="green">
             {isSubmit ? "Submit" : "Submitting..."}
           </button>
