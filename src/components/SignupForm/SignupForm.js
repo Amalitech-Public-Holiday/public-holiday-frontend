@@ -6,7 +6,8 @@ const SignupForm = () => {
   const [email, setEmail] = useState("");
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
-  const [isValid, setIsInvalid] = useState(false);
+  const [isValid, setIsValid] = useState(false);
+  const [isSuccess, setSuccess] = useState(false);
   const [notifications, setNotifications] = useState({});
   const [isSubmit, setIsSubmit] = useState(true);
 
@@ -14,7 +15,7 @@ const SignupForm = () => {
     if (password1) {
       checkPassLength(password1, {error1: "Password must be a mininum of 12 characters long."});
     } else {
-      setIsInvalid(false);
+      setIsValid(false);
     }
   }, [password1]);
 
@@ -22,16 +23,16 @@ const SignupForm = () => {
     if (password2) {
       checkPassLength(password2, {error2: "Password must be a mininum of 12 characters long."});
     } else {
-      setIsInvalid(false);
+      setIsValid(false);
     }
   }, [password2]);
 
   const checkPassLength = (password, message) => {
     if (password.length < 12) {
         setNotifications(message);
-        setIsInvalid(true);
+        setIsValid(true);
       } else {
-        setIsInvalid(false);
+        setIsValid(false);
       }
   };
 
@@ -58,7 +59,8 @@ const SignupForm = () => {
       if (password1  === password2) {
         setIsSubmit(false);
         setTimeout(() => {
-          setNotifications({ success: "Account creation successful" });
+          setNotifications({ success: "Account creation successful, you can login now!" });
+          setSuccess(true);
           setFullname("");
           setEmail("");
           setPassword1("");
@@ -67,7 +69,7 @@ const SignupForm = () => {
         }, 2000);
       } else {
         setNotifications({error3: "Password must be the same!"});
-        setIsInvalid(true);
+        setIsValid(true);
       }
     }
   }
@@ -76,6 +78,7 @@ const SignupForm = () => {
     <div className="SignupForm">
       <form autoComplete="true" onSubmit={handleSubmit}>
         <div>
+          {isSuccess && <span className="success">{notifications.success}</span>}
           <label htmlFor="fullname">Full name:</label>
           <input
             type="text"
