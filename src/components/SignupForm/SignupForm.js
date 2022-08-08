@@ -8,6 +8,7 @@ const SignupForm = () => {
   const [password2, setPassword2] = useState("");
   const [isValid, setIsInvaid] = useState(false);
   const [invalidMsg, setInvalidMsg] = useState({});
+  const [isSubmit, setIsSubmit] = useState(true);
 
   useEffect(() => {
     if (password1) {
@@ -51,12 +52,14 @@ const SignupForm = () => {
 
     if (fullname && email && password1 && password2 !== "") {
       if (password1  === password2) {
+        setIsSubmit(false);
         setTimeout(() => {
           alert("Account creation successful");
           setFullname("");
           setEmail("");
           setPassword1("");
           setPassword2("");
+          setIsSubmit(true);
         }, 2000);
       }
     }
@@ -111,7 +114,9 @@ const SignupForm = () => {
           <span>{isValid && invalidMsg.error2}</span>
         </div>
         <div>
-          <button type="submit" className="green">Submit</button>
+          <button type="submit" className="green">
+            {isSubmit ? "Submit" : "Submitting..."}
+          </button>
         </div>
       </form>
     </div>
