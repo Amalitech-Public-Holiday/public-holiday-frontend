@@ -81,7 +81,7 @@ const SignupForm = () => {
     <div className="SignupForm">
       <form autoComplete="true" onSubmit={handleSubmit}>
         {isSuccess && (
-          <div className="success">{notifications.success}
+          <div className="notification">{notifications.success}
             <span onClick={() =>(setIsSuccess(false))}>X</span>
           </div>
         )}
