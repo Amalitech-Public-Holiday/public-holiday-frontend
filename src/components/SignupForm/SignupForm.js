@@ -13,12 +13,16 @@ const SignupForm = () => {
   useEffect(() => {
     if (password1) {
       checkPassLength(password1, {error1: "Password must be a mininum of 12 characters long."});
+    } else {
+      setIsInvalid(false);
     }
   }, [password1]);
 
   useEffect(() => {
     if (password2) {
       checkPassLength(password2, {error2: "Password must be a mininum of 12 characters long."});
+    } else {
+      setIsInvalid(false);
     }
   }, [password2]);
 
