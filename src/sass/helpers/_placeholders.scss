@@ -2,3 +2,8 @@
     min-height: 80vh;
     margin-top: calc($space-1 * 2.5);
 }
+
+%invalid {
+    font-size: $space-7;
+    color: red;
+}
