@@ -93,7 +93,6 @@ h6,
 }
 
 p {
-	// margin-bottom: $size-6;
 	margin: 0 !important;
 	padding: 0 $space-6;
 }
@@ -158,4 +157,16 @@ select {
 
 label {
 	font-weight: 500;
+}
+
+.notification {
+	@extend %notification;
+}
+
+.invalid {
+	@extend %invalid;
+}
+
+.success {
+	background-color: $light-green;
 }
