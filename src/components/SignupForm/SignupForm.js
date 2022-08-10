@@ -9,6 +9,7 @@ const SignupForm = () => {
   const [password2, setPassword2] = useState("");
   const [isValid, setIsValid] = useState({});
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isError, setIsError] = useState(false);
   const [notifications, setNotifications] = useState({});
   const [isSubmit, setIsSubmit] = useState(true);
 
@@ -63,12 +64,12 @@ const SignupForm = () => {
         getUserByEmail(email)
         .then(result => setNotifications({error: result.message}))
         .catch(error => console.log(error));
-        setIsSuccess(true);
-        setFullname("");
-        setEmail("");
-        setPassword1("");
-        setPassword2("");
-        setIsSubmit(true);
+        // setIsSuccess(true);
+        // setFullname("");
+        // setEmail("");
+        // setPassword1("");
+        // setPassword2("");
+        // setIsSubmit(true);
       } else {
         setNotifications({error3: "Password must be the same!"});
         setIsValid({allPass: true});
