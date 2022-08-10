@@ -1,5 +1,6 @@
 import "./SignupForm.scss";
 import {useEffect, useState} from "react";
+import { getUserByEmail } from "../../controllers/signup";
 
 const SignupForm = () => {
   const [fullname, setFullname] = useState("");
@@ -59,17 +60,15 @@ const SignupForm = () => {
     if (fullname && email && password1 && password2 !== "") {
       if (password1  === password2) {
         setIsSubmit(false);
-        setTimeout(() => {
-          setNotifications(
-            {success: "Account creation successful, you can login now!"}
-          );
-          setIsSuccess(true);
-          setFullname("");
-          setEmail("");
-          setPassword1("");
-          setPassword2("");
-          setIsSubmit(true);
-        }, 2000);
+        getUserByEmail(email)
+        .then(result => setNotifications({error: result.message}))
+        .catch(error => console.log(error));
+        setIsSuccess(true);
+        setFullname("");
+        setEmail("");
+        setPassword1("");
+        setPassword2("");
+        setIsSubmit(true);
       } else {
         setNotifications({error3: "Password must be the same!"});
         setIsValid({allPass: true});
