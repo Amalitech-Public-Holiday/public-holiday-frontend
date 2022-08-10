@@ -62,8 +62,13 @@ const SignupForm = () => {
       if (password1  === password2) {
         setIsSubmit(false);
         getUserByEmail(email)
-        .then(result => setNotifications({error: result.message}))
+        .then(result => {
+          setNotifications({error: result.message});
+          setIsError(true);
+          setIsSubmit(true);
+        })
         .catch(error => console.log(error));
+
         // setIsSuccess(true);
         // setFullname("");
         // setEmail("");
@@ -71,7 +76,7 @@ const SignupForm = () => {
         // setPassword2("");
         // setIsSubmit(true);
       } else {
-        setNotifications({error3: "Password must be the same!"});
+        setNotifications({error3: "Passwords must be the same!"});
         setIsValid({allPass: true});
       }
     }
@@ -81,8 +86,15 @@ const SignupForm = () => {
     <div className="SignupForm">
       <form autoComplete="true" onSubmit={handleSubmit}>
         {isSuccess && (
-          <div className="notification success">{notifications.success}
-            <span onClick={() =>(setIsSuccess(false))}>X</span>
+          <div className="notification success">
+            {notifications.success}
+            <span onClick={() => setIsSuccess(false)}>X</span>
+          </div>
+        )}
+        {isError && (
+          <div className="notification error">
+            {notifications.error}
+            <span onClick={() => setIsError(false)}>X</span>
           </div>
         )}
         <div>
