@@ -5,3 +5,7 @@ export const getUserByEmail = async (email) => {
   const jsonResponse = await response.json();
   return jsonResponse;
 };
+
+export const createUser = async (fullname, email, password) => {
+    
+}
