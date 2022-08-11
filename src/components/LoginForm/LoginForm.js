@@ -1,5 +1,6 @@
 import "./LoginForm.scss";
 import { useState } from "react";
+import LoginUser from "../../controllers/login";
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -17,9 +18,17 @@ const LoginForm = () => {
     e.preventDefault();
 
     if (email && password !== '') {
-      alert('Signup successful');
-      setEmail('');
-      setPassword('');
+      LoginUser(email, password).then(result => {
+        if (result.status) {
+          alert(`User ${result.username} has logged in successfully!`);
+          setEmail('');
+          setPassword('');
+        } else if (result.error404) {
+          alert(result.error404);
+        } else {
+          alert(result.error500);
+        }
+      })
     }
   }
   return (
