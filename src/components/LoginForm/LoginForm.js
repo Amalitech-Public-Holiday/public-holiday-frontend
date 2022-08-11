@@ -9,6 +9,10 @@ const LoginForm = () => {
     setEmail(target.value);  
   }
 
+  const handlePassword = ({target}) => {
+    setPassword(target.value);
+  }
+
   return (
     <div className="LoginForm">
       <form>
@@ -18,7 +22,7 @@ const LoginForm = () => {
         </div>
         <div>
           <label htmlFor="password">Password:</label>
-          <input type="password" name="password" />
+          <input type="password" name="password" value={password} onChange={handlePassword}/>
         </div>
         <div>
           <input type="submit" className="button green" />
