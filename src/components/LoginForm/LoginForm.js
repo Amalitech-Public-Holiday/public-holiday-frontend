@@ -13,9 +13,12 @@ const LoginForm = () => {
     setPassword(target.value);
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  }
   return (
     <div className="LoginForm">
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">Email:</label>
           <input type="email" name="email" value={email} onChange={handleEmail} autoFocus required/>
