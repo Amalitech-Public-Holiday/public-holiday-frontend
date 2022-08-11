@@ -6,6 +6,8 @@ const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isDisabled, setIsDisabled] = useState(false);
+  const [notifications, setNotifications] = useState({});
+  const [isError, setIsError] = useState(false);
 
   const handleEmail = ({target}) => {
     setEmail(target.value);  
@@ -27,7 +29,8 @@ const LoginForm = () => {
           setEmail('');
           setPassword('');
         } else if (result.error404) {
-          alert(result.error404);
+          setNotifications({error: result.error404});
+          setIsError(true);
           setIsDisabled(false);
         } else {
           alert(result.error500);
@@ -39,6 +42,12 @@ const LoginForm = () => {
   return (
     <div className="LoginForm">
       <form onSubmit={handleSubmit}>
+        {isError && (
+          <div className="notification error">
+            {notifications.error}
+            <span onClick={() => setIsError(false)}>X</span>
+          </div>
+        )}
         <div>
           <label htmlFor="email">Email:</label>
           <input
