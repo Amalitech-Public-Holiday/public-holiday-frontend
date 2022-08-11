@@ -110,6 +110,7 @@ const SignupForm = () => {
             autoFocus={true}
             onChange={handleFullname}
             required
+            disabled={isDisabled}
           />
         </div>
         <div>
@@ -120,6 +121,7 @@ const SignupForm = () => {
             value={email}
             onChange={handleEmail}
             required
+            disabled={isDisabled}
           />
         </div>
         <div>
@@ -131,6 +133,7 @@ const SignupForm = () => {
             autoComplete="true"
             onChange={handlePassword1}
             required
+            disabled={isDisabled}
           />
           {isValid.pass1 && (
             <span className="invalid">{notifications.error1}</span>
@@ -145,6 +148,7 @@ const SignupForm = () => {
             autoComplete="true"
             onChange={handlePassword2}
             required
+            disabled={isDisabled}
           />
           {isValid.pass2 && (
             <span className="invalid">{notifications.error2}</span>
@@ -154,7 +158,7 @@ const SignupForm = () => {
           {isValid.allPass && (
             <span className="invalid">{notifications.error3}</span>
           )}
-          <button type="submit" className="green">
+          <button type="submit" className="green" disabled={isDisabled}>
             {isSubmit ? "Submit" : "Submitting..."}
           </button>
         </div>
