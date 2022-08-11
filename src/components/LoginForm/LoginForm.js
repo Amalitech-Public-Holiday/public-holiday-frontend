@@ -15,6 +15,12 @@ const LoginForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (email && password !== '') {
+      alert('Signup successful');
+      setEmail('');
+      setPassword('');
+    }
   }
   return (
     <div className="LoginForm">
