@@ -1,9 +1,13 @@
+import { useSelector } from "react-redux/";
+
 const Dashboard = () => {
-    return(
-        <div>
-            <h1>Welcome to Dashboard page</h1>
-        </div>
-    );
-}
+    const auth = useSelector((state) => state.auth);
+
+  return (
+    <div>
+      <h1>Welcome, {auth.authStatus && auth.username}</h1>
+    </div>
+  );
+};
 
 export default Dashboard;
