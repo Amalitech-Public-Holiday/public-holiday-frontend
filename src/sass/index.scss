@@ -159,6 +159,10 @@ label {
 	font-weight: 500;
 }
 
+:disabled {
+	opacity: 0.7;
+}
+
 .notification {
 	@extend %notification;
 }
