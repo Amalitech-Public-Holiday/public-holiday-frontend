@@ -12,6 +12,7 @@ const SignupForm = () => {
   const [isError, setIsError] = useState(false);
   const [notifications, setNotifications] = useState({});
   const [isSubmit, setIsSubmit] = useState(true);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   useEffect(() => {
     if (password1) {
