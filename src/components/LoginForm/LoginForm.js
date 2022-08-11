@@ -1,6 +1,8 @@
 import "./LoginForm.scss";
 import { useState } from "react";
 import LoginUser from "../../controllers/login";
+import { useDispatch } from "react-redux/";
+import { login } from "../../features/AuthSlice";
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -8,6 +10,8 @@ const LoginForm = () => {
   const [isDisabled, setIsDisabled] = useState(false);
   const [notifications, setNotifications] = useState({});
   const [isError, setIsError] = useState(false);
+  
+  const dispatch = useDispatch();
 
   const handleEmail = ({target}) => {
     setEmail(target.value);  
@@ -25,6 +29,7 @@ const LoginForm = () => {
       LoginUser(email, password).then(result => {
         if (result.status) {
           alert(`User ${result.username} has logged in successfully!`);
+          dispatch(login(result.username));
           setIsDisabled(false);
           setEmail('');
           setPassword('');
