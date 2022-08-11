@@ -18,11 +18,11 @@ const LoginForm = () => {
       <form>
         <div>
           <label htmlFor="email">Email:</label>
-          <input type="email" name="email" value={email} onChange={handleEmail} autoFocus/>
+          <input type="email" name="email" value={email} onChange={handleEmail} autoFocus required/>
         </div>
         <div>
           <label htmlFor="password">Password:</label>
-          <input type="password" name="password" value={password} onChange={handlePassword}/>
+          <input type="password" name="password" value={password} onChange={handlePassword} required/>
         </div>
         <div>
           <button type="submit" className="button green">
