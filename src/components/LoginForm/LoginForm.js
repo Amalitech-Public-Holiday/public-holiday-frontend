@@ -3,6 +3,7 @@ import { useState } from "react";
 import LoginUser from "../../controllers/login";
 import { useDispatch } from "react-redux/";
 import { login } from "../../features/AuthSlice";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -12,6 +13,7 @@ const LoginForm = () => {
   const [isError, setIsError] = useState(false);
   
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleEmail = ({target}) => {
     setEmail(target.value);  
@@ -33,6 +35,7 @@ const LoginForm = () => {
           setIsDisabled(false);
           setEmail('');
           setPassword('');
+          navigate('/dashboard');
         } else if (result.error404) {
           setNotifications({error: result.error404});
           setIsError(true);
