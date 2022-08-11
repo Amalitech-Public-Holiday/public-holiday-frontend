@@ -7,9 +7,13 @@
 
   form {
     padding: $space-6;
-
+    
     .green {
       @include button-style($white, $green);
+    }
+
+    button {
+      width: 100%;
     }
   }
 }
