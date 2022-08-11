@@ -1,6 +1,6 @@
 import "./SignupForm.scss";
 import {useEffect, useState} from "react";
-import { getUserByEmail } from "../../controllers/signup";
+import CreateUser from "../../controllers/signup";
 
 const SignupForm = () => {
   const [fullname, setFullname] = useState("");
@@ -61,20 +61,21 @@ const SignupForm = () => {
     if (fullname && email && password1 && password2 !== "") {
       if (password1  === password2) {
         setIsSubmit(false);
-        getUserByEmail(email)
-        .then(result => {
-          setNotifications({error: result.message});
-          setIsError(true);
-          setIsSubmit(true);
-        })
-        .catch(error => console.log(error));
-
-        // setIsSuccess(true);
-        // setFullname("");
-        // setEmail("");
-        // setPassword1("");
-        // setPassword2("");
-        // setIsSubmit(true);
+        CreateUser(fullname, email, password1).then(result => {
+          if (result.error) {
+            setNotifications({error: result.error});
+            setIsError(true);
+            setIsSubmit(true);
+          } else if (result.success) {
+            setNotifications({success: result.success});
+            setIsSuccess(true);
+            setIsSubmit(true);
+            setFullname("");
+            setEmail("");
+            setPassword1("");
+            setPassword2("");
+          }
+        }).catch(error => console.log(error));
       } else {
         setNotifications({error3: "Passwords must be the same!"});
         setIsValid({allPass: true});
