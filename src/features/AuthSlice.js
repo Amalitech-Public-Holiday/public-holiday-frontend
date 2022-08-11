@@ -5,5 +5,11 @@ export const AuthSlice = createSlice({
     initialState: {
         authStatus: false,
         username: ''
+    },
+    reducers: {
+        login: (state, action) => {
+            state.authStatus = true;
+            state.username = action.payload;
+        }
     }
 });
