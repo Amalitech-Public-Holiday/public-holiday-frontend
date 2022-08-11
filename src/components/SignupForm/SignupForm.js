@@ -62,11 +62,13 @@ const SignupForm = () => {
     if (fullname && email && password1 && password2 !== "") {
       if (password1  === password2) {
         setIsSubmit(false);
+        setIsDisabled(true);
         CreateUser(fullname, email, password1).then(result => {
           if (result.error) {
             setNotifications({error: result.error});
             setIsError(true);
             setIsSubmit(true);
+            setIsDisabled(false);
           } else if (result.success) {
             setNotifications({success: result.success});
             setIsSuccess(true);
