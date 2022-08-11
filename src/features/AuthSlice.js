@@ -10,6 +10,9 @@ export const AuthSlice = createSlice({
         login: (state, action) => {
             state.authStatus = true;
             state.username = action.payload;
+        },
+        logout: (state) => {
+            state.authStatus = false;
         }
     }
 });
