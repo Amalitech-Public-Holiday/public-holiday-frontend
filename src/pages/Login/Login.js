@@ -5,15 +5,16 @@ import LoginForm from "../../components/LoginForm/LoginForm";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-    return(
-        <div className="Login">
-            <NavBar>
-                <Link to="/signup">Signup</Link>
-            </NavBar>
-            <h2 className="text-xlarge">Login to access</h2>
-            <LoginForm/>
-            <Footer/>
-        </div>
+    return (
+      <div className="Login">
+        <NavBar>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/signup">Signup</Link></li>
+        </NavBar>
+        <h2 className="text-xlarge">Login to access</h2>
+        <LoginForm />
+        <Footer />
+      </div>
     );
 }
 
