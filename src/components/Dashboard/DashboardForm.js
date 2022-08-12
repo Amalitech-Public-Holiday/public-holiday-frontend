@@ -1,4 +1,11 @@
+import { useState } from "react";
+
 const DashboardForm = () => {
+  const [country, setCountry] = useState('');
+  const [year, setYear] = useState('');
+  const [month, setMonth] = useState('');
+  const [day, setDay] = useState('');
+  
   const generateDays = () => {
       const days = [];
       for (let i = 0; i < 32; i++) {
