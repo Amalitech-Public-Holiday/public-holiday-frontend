@@ -7,6 +7,22 @@ const DashboardForm = () => {
   const [month, setMonth] = useState('');
   const [day, setDay] = useState('');
 
+  const handleCountry = ({target}) => {
+    setCountry(target.value);
+  }
+
+  const handleYear = ({ target }) => {
+    setYear(target.value);
+  };
+
+  const handleMonth = ({ target }) => {
+    setMonth(target.value);
+  };
+
+  const handleDay = ({ target }) => {
+    setDay(target.value);
+  };
+  
   return (
     <div>
       <select name="country">
