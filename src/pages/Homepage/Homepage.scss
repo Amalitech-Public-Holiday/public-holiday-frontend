@@ -1,8 +1,9 @@
 @import "../../sass/index.scss";
 
 .Homepage {
-  margin-top: calc($size-1 * 1.5);
-  overflow: auto;
+    position: absolute;
+    top: 25vh;
+    width: 100%;
 
   h1,
   p {
@@ -24,5 +25,11 @@
       left: $space-7;
       right: $space-7;
     }
+  }
+
+  .Footer {
+    position: absolute;
+    bottom: -40vh;
+    width: 100%;
   }
 }
