@@ -43,6 +43,7 @@ const DashboardForm = () => {
       <select name="day">
           {generateDays()}
       </select>
+      <button>Submit</button>
     </div>
   );
 }
