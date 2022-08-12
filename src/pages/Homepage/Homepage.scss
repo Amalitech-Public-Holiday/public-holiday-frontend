@@ -15,8 +15,8 @@
     justify-content: center;
   }
 
-  .blue {
-    @include button-style($white, $blue);
+  .green {
+    @include button-style($white, $green);
   }
 
   a.button {
