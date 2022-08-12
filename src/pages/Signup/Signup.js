@@ -6,14 +6,15 @@ import { Link } from "react-router-dom";
 
 const Signup = () => {
     return (
-        <div className="Signup">
-            <NavBar>
-                <Link to="/login">Login</Link>
-            </NavBar>
-            <h2 className="text-xlarge">Create an account</h2>
-            <SignupForm/>
-            <Footer/>
-        </div>
+      <div className="Signup">
+        <NavBar>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/login">Login</Link></li>
+        </NavBar>
+        <h2 className="text-xlarge">Create an account</h2>
+        <SignupForm />
+        <Footer />
+      </div>
     );
 }
 
