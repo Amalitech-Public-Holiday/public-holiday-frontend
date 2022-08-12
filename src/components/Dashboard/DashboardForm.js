@@ -22,23 +22,23 @@ const DashboardForm = () => {
   const handleDay = ({ target }) => {
     setDay(target.value);
   };
-  
+
   return (
     <div>
-      <select name="country">
-        <option value="" selected>All countries</option>
+      <select name="country" onChange={handleCountry}>
+        <option value="">All Countries</option>
         <option value="GH">Ghana</option>
         <option value="DE">Germany</option>
         <option value="RW">Rwanda</option>
       </select>
-      <select name="year">
-        <option value="2022" selected>2022</option>
+      <select name="year" onChange={handleYear}>
+        <option value="2022">2022</option>
         <option value="2023">2023</option>
         <option value="2024">2024</option>
         <option value="2025">2025</option>
       </select>
-      <select name="month">
-        <option value="" selected>Any month</option>
+      <select name="month" onChange={handleMonth}>
+        <option value="">Any month</option>
         <option value="01">January</option>
         <option value="02">February</option>
         <option value="03">March</option>
@@ -52,7 +52,7 @@ const DashboardForm = () => {
         <option value="11">November</option>
         <option value="12">December</option>
       </select>
-      <select name="day">
+      <select name="day" onChange={handleDay}>
           {generateDays()}
       </select>
       <button>Submit</button>
