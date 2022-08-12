@@ -1,16 +1,17 @@
 @import "../../sass/index.scss";
 
 .NavBar {
-  padding: $space-1 $space-3;
+  padding: 0 $space-3;
   position: fixed;
   top: 0;
   width: 100%;
+  border-bottom: .2rem solid $grey;
+  background-color: $white;
 
   nav {
     display: flex;
     justify-content: space-between;
     padding: 0 $space-1;
-    border-bottom: .2rem solid $grey;
 
     a {
       font-weight: 500;
