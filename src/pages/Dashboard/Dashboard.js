@@ -1,5 +1,7 @@
 import { useSelector, useDispatch } from "react-redux/";
 import { logout } from "../../features/AuthSlice";
+import NavBar from "../../components/NavBar/NavBar";
+import "./Dashboard.scss";
 
 const Dashboard = () => {
 const auth = useSelector((state) => state.auth);
@@ -9,9 +11,16 @@ const handleLogout = () => {
     dispatch(logout());
 }
   return (
-    <div>
-      <h1>Welcome, {auth.authStatus && auth.username}</h1>
-      <button onClick={handleLogout}>Logout</button>
+    <div className="Dashboard">
+      <NavBar>
+        <li>
+          <span>{auth.username}</span>
+        </li>
+        <li>
+          <button>Logout</button>
+        </li>
+      </NavBar>
+      <h1>Welcome, {auth.username}</h1>
     </div>
   );
 };
