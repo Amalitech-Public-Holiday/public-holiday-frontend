@@ -1,9 +1,9 @@
 import "./DashboardResults.scss";
 
 const DashboardResults = () => {
-  return(
-    <div>
-        Dashboard Search Results
+  return (
+    <div className="DashboardResults">
+      <div className="HolidaysList"></div>
     </div>
   );
 }
