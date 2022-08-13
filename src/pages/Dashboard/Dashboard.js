@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux/";
 import { logout } from "../../features/AuthSlice";
 import NavBar from "../../components/NavBar/NavBar";
+import DashboardForm from "../../components/Dashboard/DashboardForm";
 import "./Dashboard.scss";
 
 const Dashboard = () => {
@@ -14,13 +15,14 @@ const handleLogout = () => {
     <div className="Dashboard">
       <NavBar>
         <li>
-          <span>{auth.username}</span>
+          <p>{auth.username}</p>
         </li>
         <li>
-          <button>Logout</button>
+          <button onClick={handleLogout}>Logout</button>
         </li>
       </NavBar>
       <h1>Welcome, {auth.username}</h1>
+      <DashboardForm/>
     </div>
   );
 };
