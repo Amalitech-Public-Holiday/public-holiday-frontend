@@ -3,7 +3,7 @@ import { useState } from "react";
 import LoginUser from "../../controllers/login";
 import { useDispatch } from "react-redux/";
 import { login } from "../../features/AuthSlice";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -81,6 +81,9 @@ const LoginForm = () => {
             placeholder="Enter registered password"
           />
         </div>
+        <p>
+          Forgot password? reset <Link to="#">here</Link>
+        </p>
         <div>
           <button type="submit" className="button green" disabled={isDisabled}>
             Submit
