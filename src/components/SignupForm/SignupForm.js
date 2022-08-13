@@ -111,6 +111,7 @@ const SignupForm = () => {
             onChange={handleFullname}
             required
             disabled={isDisabled}
+            placeholder="Enter first name and last name"
           />
         </div>
         <div>
@@ -122,6 +123,7 @@ const SignupForm = () => {
             onChange={handleEmail}
             required
             disabled={isDisabled}
+            placeholder="Enter registered email"
           />
         </div>
         <div>
@@ -134,6 +136,7 @@ const SignupForm = () => {
             onChange={handlePassword1}
             required
             disabled={isDisabled}
+            placeholder="Enter multicharacters password"
           />
           {isValid.pass1 && (
             <span className="invalid">{notifications.error1}</span>
@@ -149,6 +152,7 @@ const SignupForm = () => {
             onChange={handlePassword2}
             required
             disabled={isDisabled}
+            placeholder="Enter multicharacters password again"
           />
           {isValid.pass2 && (
             <span className="invalid">{notifications.error2}</span>
