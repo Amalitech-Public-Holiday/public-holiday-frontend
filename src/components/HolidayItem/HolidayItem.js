@@ -1,3 +1,5 @@
+import "./HolidayItem.scss";
+
 const HolidayItem = () => {
     return(
         <div>
