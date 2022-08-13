@@ -81,7 +81,7 @@ const DashboardForm = () => {
         </select>
       </div>
       <div>
-        <button type="submit" onClick={handleSubmit}>Submit</button>
+        <button type="submit" onClick={handleSubmit}>Search</button>
       </div>
     </div>
   );
