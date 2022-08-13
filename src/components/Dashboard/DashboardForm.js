@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { generateDays } from "../../util/util";
+import "./DashboardForm.scss"
 
 const DashboardForm = () => {
   const [country, setCountry] = useState('');
