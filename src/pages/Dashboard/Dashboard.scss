@@ -1,1 +1,6 @@
 @import "../../sass/index.scss";
+
+.Dashboard {
+  @extend %container;
+   
+}
