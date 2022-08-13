@@ -16,8 +16,7 @@ const handleLogout = () => {
     <div className="Dashboard">
       <NavBar>
         <li>
-          {/* <p>{auth.username}</p> */}
-          <p>Prince Asamoah Twumasi</p>
+          <p>{auth.username}</p>
         </li>
         <li>
           <button onClick={handleLogout}>Logout</button>
