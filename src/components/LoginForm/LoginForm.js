@@ -66,6 +66,7 @@ const LoginForm = () => {
             autoFocus
             required
             disabled={isDisabled}
+            placeholder="Enter registered email"
           />
         </div>
         <div>
@@ -77,6 +78,7 @@ const LoginForm = () => {
             onChange={handlePassword}
             required
             disabled={isDisabled}
+            placeholder="Enter registered password"
           />
         </div>
         <div>
