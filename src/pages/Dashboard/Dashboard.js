@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux/";
 import { logout } from "../../features/AuthSlice";
 import NavBar from "../../components/NavBar/NavBar";
-import DashboardForm from "../../components/Dashboard/DashboardForm";
+import DashboardForm from "../../components/Dashboard/DashboardForm/DashboardForm";
 import "./Dashboard.scss";
 
 const Dashboard = () => {
