@@ -3,6 +3,7 @@
 .Dashboard {
   @extend %container;
   nav {
+    padding: $space-6 0;
     li {
       padding: 0;
     }
