@@ -4,10 +4,11 @@
   height: 75vh;
   margin-top: $space-6;
   padding: 0 $space-1;
-
+  
   .HolidaysList {
     background-color: $grey;
     height: 75vh;
     overflow-y: scroll;
+    border: .1rem solid $grey;
   }
 }
