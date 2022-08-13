@@ -15,14 +15,14 @@ const handleLogout = () => {
     <div className="Dashboard">
       <NavBar>
         <li>
-          <p>{auth.username}</p>
+          {/* <p>{auth.username}</p> */}
+          <p>Prince Asamoah Twumasi</p>
         </li>
         <li>
           <button onClick={handleLogout}>Logout</button>
         </li>
       </NavBar>
-      <h1>Welcome, {auth.username}</h1>
-      <DashboardForm/>
+      <DashboardForm />
     </div>
   );
 };
