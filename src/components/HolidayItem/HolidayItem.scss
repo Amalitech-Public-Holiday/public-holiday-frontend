@@ -4,4 +4,8 @@
     background-color: $white;
     border-bottom: .1rem solid $grey;
     padding: $space-8;
+
+    span {
+        font-weight: 600;
+    }
 }
