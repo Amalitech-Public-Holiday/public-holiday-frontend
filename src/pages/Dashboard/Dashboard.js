@@ -4,8 +4,16 @@ import { logout } from "../../features/AuthSlice";
 import NavBar from "../../components/NavBar/NavBar";
 import DashboardForm from "../../components/Dashboard/DashboardForm/DashboardForm";
 import DashboardResults from "../../components/Dashboard/DashboardResults/DashboardResults";
+import HolidayItem from "../../components/HolidayItem/HolidayItem";
 
 const Dashboard = () => {
+
+const holidays = [
+  HolidayItem,
+  HolidayItem,
+  HolidayItem,
+  HolidayItem
+];
 const auth = useSelector((state) => state.auth);
 const dispatch = useDispatch();
 
@@ -23,7 +31,13 @@ const handleLogout = () => {
         </li>
       </NavBar>
       <DashboardForm />
-      <DashboardResults/>
+      <DashboardResults>
+        <HolidayItem />
+        <HolidayItem />
+        <HolidayItem />
+        <HolidayItem />
+        <HolidayItem />
+      </DashboardResults>
     </div>
   );
 };
