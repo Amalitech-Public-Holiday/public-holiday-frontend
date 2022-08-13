@@ -11,6 +11,7 @@ const LoginForm = () => {
   const [isDisabled, setIsDisabled] = useState(false);
   const [notifications, setNotifications] = useState({});
   const [isError, setIsError] = useState(false);
+  const [isSuccess, SetISuccess] = useState(false);
   
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -30,12 +31,13 @@ const LoginForm = () => {
       setIsDisabled(true);
       LoginUser(email, password).then(result => {
         if (result.status) {
-          alert(`User ${result.username} has logged in successfully!`);
+          setNotifications({success: 'Login successful, loading dashboard...'});
+          SetISuccess(true);
           dispatch(login(result.username));
           setIsDisabled(false);
           setEmail('');
           setPassword('');
-          navigate('/dashboard');
+          setTimeout(()=> navigate('/dashboard'), 2000);
         } else if (result.error404) {
           setNotifications({error: result.error404});
           setIsError(true);
@@ -54,6 +56,11 @@ const LoginForm = () => {
           <div className="notification error">
             {notifications.error}
             <span onClick={() => setIsError(false)}>X</span>
+          </div>
+        )}
+        {isSuccess && (
+          <div className="notification success">
+            {notifications.success}
           </div>
         )}
         <div>
