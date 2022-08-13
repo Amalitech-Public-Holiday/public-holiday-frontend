@@ -1,8 +1,9 @@
+import "./Dashboard.scss";
 import { useSelector, useDispatch } from "react-redux/";
 import { logout } from "../../features/AuthSlice";
 import NavBar from "../../components/NavBar/NavBar";
 import DashboardForm from "../../components/Dashboard/DashboardForm/DashboardForm";
-import "./Dashboard.scss";
+import DashboardResults from "../../components/Dashboard/DashboardResults/DashboardResults";
 
 const Dashboard = () => {
 const auth = useSelector((state) => state.auth);
@@ -23,6 +24,7 @@ const handleLogout = () => {
         </li>
       </NavBar>
       <DashboardForm />
+      <DashboardResults/>
     </div>
   );
 };
