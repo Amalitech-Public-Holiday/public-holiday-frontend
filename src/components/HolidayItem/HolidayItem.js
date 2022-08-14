@@ -2,7 +2,7 @@ import "./HolidayItem.scss";
 
 const HolidayItem = () => {
     return(
-        <div>
+        <div className="HolidayItem">
           <p><span>Name: </span>Christmas Day</p>
           <p><span>Country: </span>Ghana</p>
           <p><span>Type: </span>National</p>
