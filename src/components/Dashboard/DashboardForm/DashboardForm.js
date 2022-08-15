@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { generateDays } from "../../../util/util";
 import "./DashboardForm.scss"
+import { asyncFetchHolidays } from "../../../features/HolidaysSlice";
+import { useDispatch } from "react-redux";
 
 const DashboardForm = () => {
   const [country, setCountry] = useState('');
   const [year, setYear] = useState('2022');
   const [month, setMonth] = useState('');
   const [day, setDay] = useState('');
+
+  const dispatch = useDispatch();
 
   const handleCountry = ({target}) => {
     setCountry(target.value);
@@ -40,6 +44,7 @@ const DashboardForm = () => {
       queries += `&day=${day}`;
       /* eslint-enable no-unused-vars */
     }
+    dispatch(asyncFetchHolidays(queries));
   }
 
   return (
