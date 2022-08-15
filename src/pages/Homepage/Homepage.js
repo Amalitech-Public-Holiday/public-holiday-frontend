@@ -6,7 +6,7 @@ const Homepage = () => {
     return (
       <div className="Homepage">
         <h1>Welcome to React Public Holidays</h1>
-        <p>Discover holidays in a month, day or year in Ghana, Germany and Rwanda.</p>
+        <p>Discover holidays in Ghana, Germany and Rwanda.</p>
         <div className="buttons">
           <div className="row">
             <Link to="/signup" className="button green column">Signup</Link>
