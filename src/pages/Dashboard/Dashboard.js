@@ -8,12 +8,6 @@ import HolidayItem from "../../components/HolidayItem/HolidayItem";
 
 const Dashboard = () => {
 
-const holidays = [
-  HolidayItem,
-  HolidayItem,
-  HolidayItem,
-  HolidayItem
-];
 const auth = useSelector((state) => state.auth);
 const dispatch = useDispatch();
 
@@ -32,8 +26,6 @@ const handleLogout = () => {
       </NavBar>
       <DashboardForm />
       <DashboardResults>
-        <HolidayItem />
-        <HolidayItem />
         <HolidayItem />
         <HolidayItem />
         <HolidayItem />
