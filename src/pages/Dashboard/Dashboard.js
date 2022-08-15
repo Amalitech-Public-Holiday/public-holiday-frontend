@@ -9,6 +9,7 @@ import HolidayItem from "../../components/HolidayItem/HolidayItem";
 const Dashboard = () => {
 
 const auth = useSelector((state) => state.auth);
+const holidays = useSelector(state => state.holiday.holidays);
 const dispatch = useDispatch();
 
 const handleLogout = () => {
@@ -26,9 +27,11 @@ const handleLogout = () => {
       </NavBar>
       <DashboardForm />
       <DashboardResults>
-        <HolidayItem />
-        <HolidayItem />
-        <HolidayItem />
+        {
+          holidays.length === 0 ?
+          <p style={{textAlign: "center"}}>No holidays available</p> :
+          holidays.map(holiday => <HolidayItem key={holiday.name} data={holiday}/>)
+        }
       </DashboardResults>
     </div>
   );
