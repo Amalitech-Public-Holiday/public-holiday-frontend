@@ -1,14 +1,14 @@
 import "./HolidayItem.scss";
 
-const HolidayItem = () => {
+const HolidayItem = (props) => {
     return(
         <div className="HolidayItem">
-          <p><span>Name: </span>Christmas Day</p>
-          <p><span>Country: </span>Ghana</p>
-          <p><span>Type: </span>National</p>
-          <p><span>Date: </span>12/25/20</p>
-          <p><span>Country: </span>Ghana</p>
-          <p><span>Weekday: </span>Friday</p>
+          <p><span>Name: </span>{props.data.name}</p>
+          <p><span>Country: </span>{props.data.country}</p>
+          <p><span>Type: </span>{props.data.type}</p>
+          <p><span>Date: </span>{props.data.date}</p>
+          <p><span>Country: </span>{props.data.country}</p>
+          <p><span>Weekday: </span>{props.data.week_day}</p>
         </div>
     );
 }
