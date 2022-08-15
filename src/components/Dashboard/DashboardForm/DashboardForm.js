@@ -25,7 +25,8 @@ const DashboardForm = () => {
   };
 
   const handleSubmit = () => {
-    let queries = '';
+    /* eslint-disable no-unused-vars */
+    let queries = "";
     if (country !== "") {
       queries += `&country=${country}`;
     }
@@ -37,6 +38,7 @@ const DashboardForm = () => {
     }
     if (day !== "") {
       queries += `&day=${day}`;
+      /* eslint-enable no-unused-vars */
     }
   }
 
