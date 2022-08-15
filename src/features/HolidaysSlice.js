@@ -9,14 +9,18 @@ export const asyncFetchHolidays = createAsyncThunk(
     }
 );
 
-export const holidays = createSlice({
+const holidaysSlice = createSlice({
   name: 'holidays',
   initialState: {
     holidays: [],
+    loading: false
   },
+  reducers: {},
   extraReducers: (builder) => {
     builder.addCase(asyncFetchHolidays.fulfilled, (state, action) => {
-        state.holidays = action.payload;
+        state.holidays = action.payload.data;
     })
   }
 });
+
+export default holidaysSlice.reducer;
