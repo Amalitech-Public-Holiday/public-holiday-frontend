@@ -1,19 +1,37 @@
 @import "../../../sass/index.scss";
 
 .DashboardForm  {
-   display: flex;
-   justify-content: center;
-   padding: 0 $space-1;
-    div {
-      flex-basis: 100%;
-      padding: 0 $space-8;
-      margin: auto;
-    }
-    button {
+  padding: 0 $space-1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: $space-6;
+  margin-top: $space-1;
+  
+  .form-group {
+    width: 18.5rem;
+    margin: auto 0;
+    display: flex;
+    gap: $space-6;
+    select {
       margin: 0;
-      padding: 0;
-      height: $space-2;
-      width: 100%;
-      @include button-style($white, $green);
     }
+  }
+
+  button {
+    margin: 0;
+    padding: 0;
+    height: $space-2;
+    width: 100%;
+    @include button-style($white, $green);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .DashboardForm {
+    padding: 0 $space-8;   
+    .form-group, div {
+      width: 100%;
+    }
+  }
 }
