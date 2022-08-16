@@ -4,11 +4,25 @@
   height: 75vh;
   margin-top: $space-6;
   padding: 0 $space-1;
-  
+  position: fixed;
+  width: 100%;
+
   .HolidaysList {
     background-color: $grey;
     height: 75vh;
     overflow-y: scroll;
     border: .1rem solid $grey;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .DashboardResults {
+    padding: 0;
+    height: 65%;
+    top: 15rem;
+
+    .HolidaysList {
+      height: 100%;
+    }
   }
 }
